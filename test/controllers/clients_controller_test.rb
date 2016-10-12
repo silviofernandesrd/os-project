@@ -28,11 +28,11 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
     assert_response 200
   end
 
-  test "should destroy client" do
-    assert_difference('Client.count', -1) do
-      delete client_url(@client), as: :json
-    end
-
-    assert_response 204
-  end
+  # test "should destroy client" do
+  #   assert_difference('Client.count', -1) do
+  #     delete client_url(@client), as: :json
+  #   end
+  #
+  #   assert_response 204
+  # end
 end

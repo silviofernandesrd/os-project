@@ -28,11 +28,11 @@ class ServicesControllerTest < ActionDispatch::IntegrationTest
     assert_response 200
   end
 
-  test "should destroy service" do
-    assert_difference('Service.count', -1) do
-      delete service_url(@service), as: :json
-    end
-
-    assert_response 204
-  end
+  # test "should destroy service" do
+  #   assert_difference('Service.count', -1) do
+  #     delete service_url(@service), as: :json
+  #   end
+  #
+  #   assert_response 204
+  # end
 end
