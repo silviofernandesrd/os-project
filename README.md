@@ -1,24 +1,51 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby Version
 
-Things you may want to cover:
+* ruby-2.3.3
 
-* Ruby version
+## Install
+Caso seu postgresql local tenha um usuario e senha diferente de postgres, favor alterar o arquivo:
+- config/database.yml
 
-* System dependencies
+```
+mkdir os-project
+cd os-project/
+git clone git@github.com:silviofernandesrd/os-project-backend.git
+cd os-project-backend/
+bundle install
+bundle exec rake db:create
+bundle exec rake db:migrate
+``` 
 
-* Configuration
+## Execute server
 
-* Database creation
+```
+rails s
+```
 
-* Database initialization
+## Testing API
 
-* How to run the test suite
+Baixe um plugin do Chrome para simular as requisições rest
 
-* Services (job queues, cache servers, search engines, etc.)
+[Advanced REST client](https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo/related)
 
-* Deployment instructions
+Abra o plugin e utilize os seguintes parametros para criar:
+- cliente Jose Campos
+- serviço TV 42 polegadas
+- valor R$100
 
-* ...
+URL
+```
+http://localhost:3000/service_orders
+```
+
+Method
+* POST
+
+Raw Payload
+```
+[service_order][client_attributes][name]=Jose Campos
+&[service_order][service_attributes][name]=TV 42 polegadas
+&[service_order][service_attributes][value]=100
+```
