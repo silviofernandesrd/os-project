@@ -18,7 +18,7 @@ class ServiceOrdersController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def service_order_params
     params.require(:service_order).permit(
-      client_attributes: :name, service_attributes: [:name, :value]
+      client_attributes: [:name, :key], service_attributes: [:name, :value]
     )
   end
 end
